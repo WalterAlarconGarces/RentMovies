@@ -1,17 +1,15 @@
-<div id="<%= dom_id client %>">
-  <p>
-    <strong>Name:</strong>
-    <%= client.name %>
-  </p>
-
-  <p>
-    <strong>Age:</strong>
-    <%= client.age %>
-  </p>
-
-  <p>
-    <strong>Movie:</strong>
-    <%= client.movie_id %>
-  </p>
-
+<div id="<%= dom_id client %>" class="col">
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Name: <%= client.name %></h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">ID: <%=client.id%></h6>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Age: <%=client.age%></h6>
+      <% if client.movie_id != nil %>
+        <p>Rented movie: <%= Movie.find(client.movie_id)[:name] %></p>
+      <% else %>
+        <p>Rented movie: No one</p>
+      <% end %>
+      <%= link_to "Show this client", client %>
+    </div>
+  </div>
 </div>

@@ -9,7 +9,7 @@
     @clients = Client.create( name: Faker::Name.name, age: Faker::Number.between(from: 18, to: 100), movie_id: Faker::Number.between(from: 1, to: 200))
     puts @clients
 end
-100.times do
+200.times do
     @movies = Movie.create( name: Faker::Movie.title)
     puts @movies
 end
