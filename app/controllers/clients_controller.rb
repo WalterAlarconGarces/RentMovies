@@ -4,6 +4,9 @@ class ClientsController < ApplicationController
   # GET /clients or /clients.json
   def index
     @clients = Client.all
+    if params[:query_text].present?
+      @clients = @clients.search_full_text(params[:query_text])
+      end
   end
 
   # GET /clients/1 or /clients/1.json

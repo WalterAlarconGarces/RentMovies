@@ -73,3 +73,5 @@ end
 
 
 gem 'faker'
+
+gem 'pg_search', '~> 2.3', '>= 2.3.6'
