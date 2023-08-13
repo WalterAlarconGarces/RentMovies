@@ -1,8 +1,11 @@
-<p style="color: green"><%= notice %></p>º
+<p style="color: green"><%= notice %></p>
+<div id="div_clients">
 <h1>Clients</h1>
 <%= form_with url: clients_path, method: :get do |form|%>
  <%= form.text_field :query_text, placeholder: 'Client, age or rented movie', value: params[:query_text]%>
  <button class="btn btn-outline-success" type="submit">Search</button>
+</div>
+
 <%end%>
 <div id="clients">
   <div class="container text-center">
@@ -13,4 +16,13 @@
     </div>
   </div>
 </div>
-<%= link_to "New client", new_client_path %>
+
+<div class="container ">
+<div class="row ">
+<div class="col"></div>
+  <div class="col">
+    <p><%=raw pagy_nav(@pagy)%></p>
+  </div>
+  <div class="col"></div>
+</div>
+</div>

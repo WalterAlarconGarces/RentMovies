@@ -3,7 +3,8 @@ class ClientsController < ApplicationController
 
   # GET /clients or /clients.json
   def index
-    @clients = Client.all
+    #@clients = Client.all
+    @pagy, @clients = pagy(Client.all.reverse_order)
     if params[:query_text].present?
       @clients = @clients.search_full_text(params[:query_text])
       end

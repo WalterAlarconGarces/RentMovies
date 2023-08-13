@@ -24,3 +24,15 @@ body {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+#div_clients {
+    
+    text-align: center;
+}
+#div_movies {
+    
+    text-align: center;
+}
+.pagination {
+      background-color:  rgb(110, 194, 25);
+      font-size: larger;
+}

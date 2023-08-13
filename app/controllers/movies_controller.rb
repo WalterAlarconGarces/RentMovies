@@ -18,7 +18,8 @@ class MoviesController < ApplicationController
 
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all.order(client_id: :asc)
+    #@movies = Movie.all.order(client_id: :asc)
+    @pagy, @movies = pagy(Movie.all.reverse_order)
     if params[:query_text].present?
       @movies = @movies.search_full_text(params[:query_text])
       end
